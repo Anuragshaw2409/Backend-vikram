@@ -3,13 +3,14 @@ const URLofImages = require("./Schemas/urlshemas.js")
 connectToMongo();
 const express = require('express');
 const cors = require('cors');
-app.use(cors());
 const port =  3000;
 const app = express();
-app.use(express.json());
 app.listen(port,()=>{
     console.log("Running on port",port);
 })
+app.use(cors());
+app.use(express.json());
+
 app.get('/',(req,res)=>{
     res.json(("Hello Vikram"));
 })
