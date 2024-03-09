@@ -33,3 +33,5 @@ app.post('/location',async(req,res)=>{
     
 
 })
+
+module.exports =app;
