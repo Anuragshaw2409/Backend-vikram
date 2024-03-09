@@ -1,5 +1,5 @@
-const connectToMongo = require('./db.js');
-const URLofImages = require("./Schemas/urlshemas.js")
+const connectToMongo = require('../db.js');
+const URLofImages = require("../Schemas/urlshemas.js")
 connectToMongo();
 const express = require('express');
 const port =  3000;
