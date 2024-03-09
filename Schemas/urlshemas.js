@@ -3,7 +3,8 @@ const {Schema} =mongoose;
 
 
 const urlschema = new Schema({
-location: String,
+location: {type:String,
+required: true},
 steps:[String]
 });
 

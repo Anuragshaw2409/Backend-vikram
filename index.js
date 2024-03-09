@@ -24,7 +24,7 @@ app.get('/location',async(req,res)=>{
 
 app.post('/location',async(req,res)=>{
     const getlocation  = req.body.location;
-    const stepsArray = req.body.steps;
+    const stepsArray = req.body.url;
 
     const newLocation = new URLofImages({
         location: getlocation,
@@ -32,9 +32,10 @@ app.post('/location',async(req,res)=>{
     })
     newLocation.save().then(()=>{
         return res.json("locations saved successfully")
-    }).catch( ()=> res.json("something happened"))
+    })
+    .catch( (err)=> res.json(err.message))
     
 
-})
+});
 
 module.exports =app;
