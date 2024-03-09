@@ -8,7 +8,10 @@ const app = express();
 app.listen(port,()=>{
     console.log("Running on port",port);
 })
-// app.use(cors({origin: 'https://user-interface-location-entry.vercel.app/'}));
+app.use(cors({ origin: '*',
+methods: '*',
+allowedHeaders: ['Content-Type', 'Authorization'],
+credentials: true,}));
 app.use(express.json());
 
 app.get('/',(req,res)=>{
